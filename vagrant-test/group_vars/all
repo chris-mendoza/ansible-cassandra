@@ -1,0 +1,28 @@
+---
+cassandra:
+
+  version: '2.1'
+  version_branch: '2.1'
+
+  dependencies:
+    - 'openjdk-7-jre'
+    - 'openjdk-7-jdk'
+
+cassandra_1_2:
+  repo: 'deb http://www.apache.org/dist/cassandra/debian 12x main'
+
+cassandra_2_0:
+  repo: 'deb http://www.apache.org/dist/cassandra/debian 20x main'
+
+cassandra_2_1:
+  repo: 'deb http://www.apache.org/dist/cassandra/debian 21x main'
+
+config:
+  cluster_name: 'MyCluster'
+  data_file_directories:
+    - '/var/lib/cassandra/data'
+  commitlog_directory: '/var/lib/cassandra/commitlog'
+  saved_caches_directory: '/var/lib/cassandra/saved_caches'
+  log_level: 'info'
+  java_max_heap_size: '512M'
+  java_max_heap_newsize: '100M'
