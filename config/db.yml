@@ -1,0 +1,5 @@
+- name: Configure DB Servers
+  hosts: db
+  user: root
+  roles:
+    - db

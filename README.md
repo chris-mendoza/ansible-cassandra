@@ -1,2 +1,4 @@
-# ansible-cassandra
-Ansible + Cassandra. Playbooks for best practice Cassandra configuration and management.
+ansible-cassandra
+=============
+
+Installs and configures N number of Cassandra nodes in a cluster on Rackspace Public Cloud

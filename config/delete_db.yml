@@ -1,0 +1,22 @@
+- name: Delete db nodes
+  gather_facts: False
+  hosts: localhost
+  tasks:
+    - name: Delete db Nodes
+      local_action:
+        module: rax
+        credentials: ~/.rackspace_cloud_credentials
+        name: cassandra-n
+        flavor: performance1-2
+        image: ubuntu-1410-utopic-unicorn-pvhvm 
+        region: IAD
+        group: db
+        count: "{{ config.node_count }}"
+        wait: yes
+        state: absent
+        files:
+          /root/.ssh/authorized_keys: ~/.ssh/id_rsa.pub
+        networks:
+          - private
+          - public
+      register: rax
