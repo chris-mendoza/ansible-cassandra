@@ -10,10 +10,6 @@
   tags:
     - packages
 
-- name: Register ip for config file
-  shell: ifconfig eth1 | awk '/inet addr/' | cut -d':' -f2 | awk '{print $1}'
-  register: clus_ip
-
 - name: Install Cassandra config file
   template: src=cassandra-{{cassandra.version_branch}}.j2 dest=/etc/cassandra/cassandra.yaml
   tags:
