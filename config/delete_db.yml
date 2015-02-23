@@ -6,7 +6,7 @@
       local_action:
         module: rax
         credentials: ~/.rackspace_cloud_credentials
-        name: cassandra-n
+        name: "{{ config.node_name }}-n"
         flavor: performance1-2
         image: ubuntu-1410-utopic-unicorn-pvhvm 
         region: IAD

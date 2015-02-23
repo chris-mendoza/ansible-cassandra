@@ -20,6 +20,7 @@ cassandra_2_1:
   repo: 'deb http://www.apache.org/dist/cassandra/debian 21x main'
 
 config:
+  node_name: 'cass-node'
   cluster_name: 'MyCluster'
   node_count: '3'
   data_file_directories:
