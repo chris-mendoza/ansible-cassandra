@@ -38,3 +38,14 @@ cluster_opts:
   ord_cluster:
     region: "ORD"
     node_count: 3
+
+nodetool_opts:
+  iad_nodetool:
+    region: "IAD"
+    node_count: 1
+  dfw_nodetool:
+    region: "DFW"
+    node_count: 1
+  ord_nodetool:
+    region: "ORD"
+    node_count: 1
