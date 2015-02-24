@@ -4,9 +4,3 @@
   register: cassandra_install
   tags:
     - packages
-
-- name: Install Cassandra Java Config File
-  template: src=cassandra-{{cassandra.version_branch}}-env.j2 dest=/etc/cassandra/cassandra-env.yaml
-  notify: stop cassandra
-  tags:
-    - configuration
