@@ -12,7 +12,7 @@
         image: ubuntu-1410-utopic-unicorn-pvhvm
         region: "{{ item.value.region }}"
         wait: yes
-        state: present
+        state: absent
         group: nodetool
         count: "{{ item.value.node_count }}"
         files:
@@ -22,13 +22,3 @@
            - public
       with_dict: nodetool_opts
       register: rax
-
-    - name: Add created servers to nodetool group
-      local_action:
-        module: add_host
-        hostname: "{{ item.name }}"
-        ansible_ssh_host: "{{ item.rax_accessipv4 }}"
-        ansible_ssh_pass: "{{ item.rax_adminpass }} "
-        groupname: nodetool
-      with_items: rax.success
-      when: rax.action =='create'
